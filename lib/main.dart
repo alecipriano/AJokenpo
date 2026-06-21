@@ -190,7 +190,7 @@ class _JokenpoScreenState extends State<JokenpoScreen> {
     return Container(
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: const Color(0xFF1B2336).withOpacity(0.6),
+        color: const Color(0xFF1B2336).withValues(alpha: 0.6),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: Colors.white10),
         boxShadow: const [
@@ -249,7 +249,7 @@ class _JokenpoScreenState extends State<JokenpoScreen> {
               color: color,
               shadows: [
                 Shadow(
-                  color: color.withOpacity(0.4),
+                  color: color.withValues(alpha: 0.4),
                   offset: const Offset(0, 0),
                   blurRadius: 8,
                 ),
@@ -266,11 +266,11 @@ class _JokenpoScreenState extends State<JokenpoScreen> {
     Color borderColor = Colors.white10;
     if (_jogoIniciado) {
       if (_resultado.contains("Ganhou")) {
-        borderColor = const Color(0xFFFF5252).withOpacity(0.4); // Machine lost (Red glow)
+        borderColor = const Color(0xFFFF5252).withValues(alpha: 0.4); // Machine lost (Red glow)
       } else if (_resultado.contains("Perdeu")) {
-        borderColor = const Color(0xFF69F0AE).withOpacity(0.4); // Machine won (Green glow)
+        borderColor = const Color(0xFF69F0AE).withValues(alpha: 0.4); // Machine won (Green glow)
       } else {
-        borderColor = const Color(0xFFFFD740).withOpacity(0.4); // Tie (Amber glow)
+        borderColor = const Color(0xFFFFD740).withValues(alpha: 0.4); // Tie (Amber glow)
       }
     }
 
@@ -293,12 +293,12 @@ class _JokenpoScreenState extends State<JokenpoScreen> {
             color: const Color(0xFF1B2336),
             shape: BoxShape.circle,
             border: Border.all(
-              color: _jogoIniciado ? borderColor.withOpacity(1.0) : Colors.white10,
+              color: _jogoIniciado ? borderColor.withValues(alpha: 1.0) : Colors.white10,
               width: 3,
             ),
             boxShadow: [
               BoxShadow(
-                color: _jogoIniciado ? borderColor.withOpacity(0.3) : Colors.transparent,
+                color: _jogoIniciado ? borderColor.withValues(alpha: 0.3) : Colors.transparent,
                 blurRadius: 20,
                 spreadRadius: 2,
               ),
@@ -350,7 +350,7 @@ class _JokenpoScreenState extends State<JokenpoScreen> {
           shadows: _jogoIniciado
               ? [
                   Shadow(
-                    color: _corResultado.withOpacity(0.5),
+                    color: _corResultado.withValues(alpha: 0.5),
                     blurRadius: 12,
                   ),
                 ]
@@ -400,7 +400,7 @@ class _JokenpoScreenState extends State<JokenpoScreen> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
         ),
-        backgroundColor: const Color(0xFF1B2336).withOpacity(0.2),
+        backgroundColor: const Color(0xFF1B2336).withValues(alpha: 0.2),
       ),
     );
   }
@@ -457,7 +457,7 @@ class _OptionButtonState extends State<OptionButton> {
             boxShadow: [
               BoxShadow(
                 color: _isHovered
-                    ? Colors.blueAccent.shade400.withOpacity(0.4)
+                    ? Colors.blueAccent.shade400.withValues(alpha: 0.4)
                     : Colors.black26,
                 blurRadius: _isHovered ? 16 : 8,
                 offset: const Offset(0, 4),
